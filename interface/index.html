@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watch</title>
+<link rel="stylesheet" href="trp.css">
+<link rel="stylesheet" href="watch.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true"></span>
+      <div class="brand-text">
+        <h1>Watch</h1>
+        <span class="muted small" id="version"></span>
+      </div>
+    </div>
+    <div class="row">
+      <span class="chip" id="helper-chip">Helper…</span>
+      <span class="chip" id="conn-chip">Connecting…</span>
+    </div>
+  </header>
+
+  <div class="listen">
+    <!-- The display and its buttons, as on Listen. -->
+    <section class="panel scanner">
+      <header class="scan-head" id="scan-head"></header>
+      <div id="display"></div>
+      <div class="scan-controls">
+        <button class="scan-feed" id="feed" aria-pressed="false"><span class="scan-feed-dot"></span><span id="feed-label">Live transcripts off</span></button>
+        <div class="scan-grid">
+          <button class="scan-btn" id="hold-sys" title="Only this system">Hold sys</button>
+          <button class="scan-btn" id="hold-tg" title="Only this talkgroup">Hold TG</button>
+          <button class="scan-btn" id="pause" title="Stop sending calls to the helper for now">Pause</button>
+          <button class="scan-btn" id="play" title="Play this call's audio">Play</button>
+          <button class="scan-btn" id="copy" title="Copy this call's transcript">Copy</button>
+          <button class="scan-btn" id="avoid" title="Stop transcribing this talkgroup (again: transcribe it again)">Avoid</button>
+        </div>
+        <div class="scan-avoid-times">
+          <span class="muted small">Avoid for</span>
+          <button class="btn ghost small" data-avoid="30">30 min</button>
+          <button class="btn ghost small" data-avoid="60">60 min</button>
+          <button class="btn ghost small" data-avoid="120">120 min</button>
+        </div>
+      </div>
+      <div class="scan-recent" id="recent"></div>
+      <details class="watch-settings">
+        <summary class="muted small">Settings</summary>
+        <label class="watch-field"><span class="small">Helper</span><input class="search" id="helper-url" type="url" spellcheck="false"></label>
+        <label class="watch-field"><span class="small">Skip calls shorter than</span><input class="search watch-num" id="min-seconds" type="number" min="0" step="0.1"><span class="small muted">s</span></label>
+        <div class="row"><button class="btn ghost small" id="forget">Forget saved transcripts</button></div>
+      </details>
+    </section>
+
+    <!-- The calls, and what to transcribe. -->
+    <section class="panel listen-side">
+      <div class="tabs listen-tabs" role="tablist">
+        <button role="tab" id="tab-calls" class="on" aria-selected="true">Calls</button>
+        <button role="tab" id="tab-tgs" aria-selected="false">Talkgroups<span class="muted small" id="some-off"></span></button>
+      </div>
+      <div id="no-audio"></div>
+
+      <div id="pane-calls">
+        <div class="row listen-tools">
+          <input class="search" id="call-filter" placeholder="Filter talkgroup…">
+          <label class="toggle"><input type="checkbox" id="only-selected" checked><span>Selected talkgroups only</span></label>
+        </div>
+        <ul class="listen-calls" id="calls"></ul>
+        <footer class="listen-more" id="more"></footer>
+      </div>
+
+      <div id="pane-tgs" hidden>
+        <div class="row listen-tools">
+          <input class="search" id="tg-find" placeholder="Find talkgroup…">
+          <span class="spacer"></span>
+          <button class="btn ghost small" id="all-on">All on</button>
+          <button class="btn ghost small" id="all-off">All off</button>
+        </div>
+        <div id="tgs"></div>
+      </div>
+    </section>
+  </div>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

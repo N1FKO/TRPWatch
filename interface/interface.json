@@ -1,0 +1,1 @@
+{ "id": "watch", "name": "Watch", "version": "0.2.0", "description": "TRP's Listen look and feel, with on-device Apple SpeechTranscriber transcripts from a local helper.", "api": 1, "access": "listen", "license": "GPL-3.0-or-later" }

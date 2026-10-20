@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>org.n1fko.trp-watch-helper</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>@REPO@/helper/.build/release/trp-watch-helper</string>
+		<string>--port</string>
+		<string>8765</string>
+		<string>--locale</string>
+		<string>en-US</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>KeepAlive</key>
+	<true/>
+	<key>ProcessType</key>
+	<string>Interactive</string>
+	<key>StandardErrorPath</key>
+	<string>@HOME@/Library/Logs/trp-watch-helper.log</string>
+	<key>StandardOutPath</key>
+	<string>@HOME@/Library/Logs/trp-watch-helper.log</string>
+</dict>
+</plist>

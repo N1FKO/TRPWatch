@@ -1,0 +1,16 @@
+TRP Watch is distributed under two licenses, by directory:
+
+  helper/     MIT License                    see helper/LICENSE
+              Copyright (c) 2026 Walter Horbert
+
+  interface/  GNU General Public License,    see interface/LICENSE
+              version 3 or (at your option)
+              any later version
+
+---------------------------------------------------------------------------
+NOTE: The helper (trp-watch-helper) is original code and is MIT licensed.
+The interface includes Trunk Recorder Pro's stylesheet (interface/trp.css)
+and selection logic adapted from Trunk Recorder Pro's Listen page, both
+GPL-3.0-or-later, so the interface as a whole is GPL-3.0-or-later.
+Trunk Recorder Pro: https://github.com/TrunkRecorder/trunk-recorder-pro
+Not affiliated with or endorsed by the Trunk Recorder Pro project.

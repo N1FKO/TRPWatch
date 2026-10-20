@@ -1,0 +1,40 @@
+/* Watch's own rules, on top of trp.css (TRP's stylesheet). Same tokens. */
+
+.topbar h1 { font-size: 22px; }
+.brand-text { display: flex; flex-direction: column; }
+
+/* The transcript: in the display, and under each call in the list. */
+.scan-transcript { font-size: 17px; line-height: 1.4; overflow-wrap: anywhere; white-space: pre-wrap; margin-top: 4px; user-select: text; }
+.scan-transcript.state { font-size: 13px; color: var(--muted); }
+.scan-transcript.err { font-size: 13px; color: var(--bad); }
+.scan-conf { font-size: 11px; color: var(--muted); }
+
+.listen-calls li { border-radius: 6px; }
+.listen-calls button { align-items: flex-start; }
+.listen-calls button > .mono, .listen-calls button > .led { margin-top: 2px; }
+.listen-calls button > .led { margin-top: 5px; }
+.lc-text { white-space: normal; overflow-wrap: anywhere; margin-top: 2px; color: var(--text); font-size: 13px; line-height: 1.35; }
+.lc-text.state { color: var(--muted); }
+.lc-text.err { color: var(--bad); }
+.lc-state.err { color: var(--bad); }
+.listen-calls { max-height: calc(100vh - 220px); }
+
+.watch-settings { border-top: 1px solid var(--line); padding-top: 10px; }
+.watch-settings summary { cursor: pointer; }
+.watch-field { display: flex; align-items: center; gap: 8px; margin: 10px 0; }
+.watch-field .search { flex: 1; width: auto; }
+.watch-field .watch-num { flex: none; width: 70px; }
+
+/* Save is a download link styled as TRP's small ghost button. */
+a.btn { color: inherit; text-decoration: none; display: inline-block; }
+
+/* A steady display: room for four lines of transcript (17px × 1.4) whatever it holds,
+   the talkgroup name on one line, and the idle display as tall as a call's. Longer
+   transcripts still grow it. */
+.scan-transcript { min-height: 96px; }
+.scan-display .scan-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.scan-sub { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.scan-display.watch-steady { position: relative; }
+.watch-skeleton { visibility: hidden; display: flex; flex-direction: column; gap: 6px; }
+.watch-idle { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; text-align: center; padding: 14px 16px; }
+.watch-idle .scan-label { color: var(--muted); white-space: normal; }
